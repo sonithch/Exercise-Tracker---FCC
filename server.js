@@ -1,11 +1,8 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-
+const userHandler = require('./controllers/userHandler.js')
 const cors = require('cors')
-
-const mongoose = require('mongoose')
-mongoose.connect(process.env.MLAB_URI || 'mongodb://localhost/exercise-track' )
 
 app.use(cors())
 
@@ -17,6 +14,48 @@ app.use(express.static('public'))
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
 });
+
+app.post("/api/exercise/new-user", userHandler.addUser)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Not found middleware
