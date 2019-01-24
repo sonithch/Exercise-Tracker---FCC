@@ -25,7 +25,7 @@ exports.addUser = (req,res)=>{
       return res.json('username already taken')
     })
   }
-  return res.json('Invalid username')
+  else{return res.json('Invalid username')}
 }
 
 exports.getAllUsers = (req,res)=>{
