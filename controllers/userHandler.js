@@ -25,5 +25,12 @@ exports.addUser = (req,res)=>{
       return res.json('username already taken')
     })
   }
-  
+  return res.json('Invalid username')
+}
+
+exports.getAllUsers = (req,res)=>{
+  userEntry.find({},{'__v': 0},(err,data)=>{
+    if(err) return res.json(err)
+    return res.json(data)
+  })
 }

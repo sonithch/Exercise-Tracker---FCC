@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 app.post("/api/exercise/new-user", userHandler.addUser)
 
-
+app.get("/api/exercise/users",userHandler.getAllUsers)
 
 
 
